@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ResultRegister</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background: #000;
+      color: #fff;
+      font-family: sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .circle-D {
+      
+      height: 30vh;
+      width: 30vh;
+      border-radius: 999px;
+      background: #none;
+      border: 3px solid #afa;
+      border-top: none;
+      border-bottom: none;
+      color: #afa;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    h1 {
+      color: #faa;
+      font-size: 4vw;
+      z-index: 9999;
+    }
+    @keyframes rotate-D {
+      to { transform: rotate(720deg)}
+    }
+    .button-back-D {
+      height: 10vh;
+      width: 40vw;
+      background: none;
+      border: 1px solid #afa;
+      box-shadow: 0 0 5px #afa;
+      margin-top: 20vh;
+      border-radius: 10px;
+      color: #afa;
+      font-size: clamp(0.5rem,1.5rem,2.5rem);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="circle-D" id="circle-D">
+    Creating account
+  </div>
+  <a class="button-back-D" id='button-back' href='home-B.html'>
+    Back
+  </a>
+  <script>
+    let circle = document.getElementById('circle-D');
+    let BB = document.getElementById('button-back');
+    let CS = circle.style;
+    function transformCircle() {
+      CS.border = "3px solid #f66";
+      CS.borderTop = "none";
+      CS.borderBottom = "none";
+      CS.color = "#f44";
+      CS.animation = "rotate-D 3s infinite";
+      circle.innerText = " ";
+      BB.style.display = 'none';
+    }
+    transformCircle();
+    setTimeout( ()=> {
+    CS.border = "3px solid #afa";
+    CS.borderTop = "none";
+    CS.borderBottom = "none";
+    CS.color = "#afa";
+    CS.animation = "none";
+    circle.innerText = "Account created";
+    BB.style.display = 'flex';
+  }, 6000); 
+  </script>
+</body>
+</html>
